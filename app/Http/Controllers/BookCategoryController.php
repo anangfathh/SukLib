@@ -10,12 +10,12 @@ class BookCategoryController extends Controller
     public function index()
     {
         $categories = BookCategory::all();
-        return view('categories.index', compact('categories'));
+        return view('Admin.BookCategory.index', compact('categories'));
     }
 
     public function create()
     {
-        return view('categories.create');
+        return view('admin.bookcategory.create');
     }
 
     public function store(Request $request)
@@ -34,7 +34,7 @@ class BookCategoryController extends Controller
     public function edit($id)
     {
         $category = BookCategory::find($id);
-        return view('categories.edit', compact('category'));
+        return view('admin.bookcategory.edit', compact('category'));
     }
 
     public function update(Request $request, $id)
