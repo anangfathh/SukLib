@@ -1,6 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BookCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +61,10 @@ Route::get('/user-profile', function () {
 // ////////////////////////////
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/books/categories', BookCategoryController::class);
+Route::resource('/books', BookController::class);
+Route::resource('/users', UserController::class);
