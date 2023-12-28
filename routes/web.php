@@ -22,7 +22,7 @@ use App\Http\Controllers\Member\BookLoanController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -55,6 +55,10 @@ Route::get('/user-cari', function () {
 Route::get('/user-profile', function () {
     return view('user.profile');
 })->name('user-profile');
+
+Route::get('/books-detail', function () {
+    return view('user.books-detail');
+})->name('books-detail');
 
 
 
