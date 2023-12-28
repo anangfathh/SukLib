@@ -220,7 +220,7 @@
                                                 Image</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input type="file" id="user_image" name="user_image"
-                                                    class="form-control-file">
+                                                    class="form-control">
                                                 @error('user_image')
                                                     <div class="text-danger">{{ $message }}</div>
                                                 @enderror

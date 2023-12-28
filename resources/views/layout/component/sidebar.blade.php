@@ -11,14 +11,14 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('user-cari') }}">
+            <a class="nav-link collapsed" href="{{ route('member.books.index') }}">
                 <i class="bi bi-search"></i>
                 <span>Cari</span>
             </a>
         </li><!-- End Register Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('user-riwayat') }}">
+            <a class="nav-link collapsed" href="{{ route('member.bookLoans.index') }}">
                 <i class="bi bi-journals"></i>
                 <span>Riwayat</span>
             </a>

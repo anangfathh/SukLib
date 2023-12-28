@@ -96,6 +96,19 @@
                                     </select>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="book_image">{{ __('Book Image') }}</label>
+                                    <input id="book_image" type="file"
+                                        class="form-control @error('book_image') is-invalid @enderror" name="book_image"
+                                        accept="image/*">
+
+                                    @error('book_image')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
                                 <div class="text-center mt-3">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Add Book') }}
@@ -112,21 +125,29 @@
 
                 <!-- Table -->
                 <div class="col-lg-6">
-                    <p class="thx">TERIMA KASIH TELAH
-                    <p class="thx menyumbang">MENYUMBANG!</p>
-                    </p>
+                    <h1 class="thx">TERIMA KASIH TELAH
+                        <h1 class="thx menyumbang">MENYUMBANG!</h1>
+                    </h1>
                     <div class="row thx2">
-                        <div class="thx-container">
+                        <div class="thx-container mt-5">
                             <span class="thx-text">Sumbangan mu sebelumnya</span>
                             <div class="row align-items-start thx2-container">
-                                <div class="col thx">
+                                <div class="container-sm gap-3 d-flex">
                                     @foreach ($recents as $recent)
-                                        <div class="card thx">
-                                            <div class="thx-card-body">
-                                                <p class="card-title-thx1">{{ $recent->name }}</p>
-                                                <p class="card-title-thx2">{{ $recent->book_id }}</p>
-                                                <p class="card-title-thx3">{{ $recent->category }}</p>
-                                            </div>
+                                        <div class="col-lg-2 mt-3" style="padding-right: 20px;">
+                                            <!-- Card kedua -->
+                                            <div class="card">
+                                                @if ($recent->book_image)
+                                                    <img src="{{ asset('storage/' . $recent->book_image) }}"
+                                                        alt="Book Image" width="100" class="align-self-center">
+                                                @else
+                                                    No Image
+                                                @endif
+                                                <div class="card-body">
+                                                    <h5 class="card-title">{{ $recent->name }}</h5>
+                                                    <p style="font-size: 12px;">{{ $recent->category_id }}</p>
+                                                </div>
+                                            </div><!-- End Card kedua -->
                                         </div>
                                     @endforeach
                                 </div>

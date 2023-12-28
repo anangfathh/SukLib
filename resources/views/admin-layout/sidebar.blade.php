@@ -10,18 +10,11 @@
         <!-- End Dashboard Nav -->
 
         <li class="nav-heading">Pages</li>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>Edit Member</span>
-            </a>
-        </li>
         <!-- End Profile Page Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('categories.index') }}">
-                <i class="bi bi-question-circle"></i>
+                <i class="bi bi-file-earmark-plus"></i>
                 <span>Categories</span>
             </a>
         </li>
@@ -29,7 +22,7 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('users.index') }}">
-                <i class="bi bi-envelope"></i>
+                <i class="bi bi-person"></i>
                 <span>Member List</span>
             </a>
         </li>
@@ -37,24 +30,24 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('books.index') }}">
-                <i class="bi bi-card-list"></i>
+                <i class="bi bi-book"></i>
                 <span>Book List</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-register.html">
-                <i class="bi bi-card-list"></i>
+            <a class="nav-link collapsed" href="{{ route('admin.bookloans.index') }}">
+                <i class="bi bi-clock-history"></i>
                 <span>History</span>
             </a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link collapsed" href="pages-register.html">
                 <i class="bi bi-card-list"></i>
                 <span>Literasi</span>
             </a>
-        </li>
+        </li> --}}
         <!-- End Register Page Nav -->
         <!-- End Blank Page Nav -->
     </ul>

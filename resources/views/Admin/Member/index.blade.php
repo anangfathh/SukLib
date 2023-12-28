@@ -50,13 +50,14 @@
                                             <td>
                                                 {{-- <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary">View</a> --}}
                                                 <a href="{{ route('users.edit', $user->id) }}"
-                                                    class="btn btn-warning">Edit</a>
+                                                    class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i></a>
                                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST"
                                                     style="display: inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger"
-                                                        onclick="return confirm('Are you sure?')">Delete</button>
+                                                    <button type="submit" class="btn btn-outline-danger"
+                                                        onclick="return confirm('Are you sure?')"><i
+                                                            class="bi bi-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

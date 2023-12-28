@@ -51,15 +51,16 @@
                                             </td>
                                             <td>
                                                 <a href="{{ route('books.edit', $book->id) }}"
-                                                    class="btn btn-primary">Edit</a>
+                                                    class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i></a>
                                                 <a href="{{ route('books.show', $book->id) }}"
-                                                    class="btn btn-success">Details</a>
+                                                    class="btn btn-outline-success"><i class="bi bi-eye"></i></a>
                                                 <form action="{{ route('books.destroy', $book->id) }}" method="POST"
                                                     class="d-inline">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger"
-                                                        onclick="return confirm('Are you sure you want to delete this book?')">Delete</button>
+                                                    <button type="submit" class="btn btn-outline-danger"
+                                                        onclick="return confirm('Are you sure you want to delete this book?')"><i
+                                                            class="bi bi-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
