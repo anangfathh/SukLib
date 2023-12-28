@@ -23,6 +23,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('users.index') }}">Member List</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.bookloans.index') }}">Riwayat Peminjaman</a>
+                </li>
                 <!-- Add other navigation links as needed -->
             </ul>
         </div>

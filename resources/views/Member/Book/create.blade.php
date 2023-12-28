@@ -55,6 +55,7 @@
     </form>
 </div>
 
+<h3>Buku Sumbanganmu sebelumnya</h3>
 @foreach ($recents as $recent)
     <p>{{ $recent->name }}</p>
 @endforeach

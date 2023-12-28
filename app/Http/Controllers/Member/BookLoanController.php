@@ -77,7 +77,7 @@ class BookLoanController extends Controller
         $book->status = 'Dipinjam';
         $book->save();
 
-        return redirect()->back()->with('success', 'Peminjaman buku berhasil.');
+        return redirect()->route('bookLoans.index')->with('success', 'Peminjaman buku berhasil.');
     }
 
     public function returnBook(Request $request, $bookLoan_id)

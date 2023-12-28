@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedDouble('Rating');
             $table->enum('status', ['Tersedia', 'Dipinjam', 'Kosong'])->default('Tersedia');
             $table->enum('type', ['Hard Copy', 'Soft Copy', 'Audio Book']);
-            $table->foreignId('category')->references('id')->on('book_category')->cascadeOnDelete();
+            $table->foreignId('category_id')->references('id')->on('book_category')->cascadeOnDelete();
             $table->string('book_image')->nullable();
             $table->timestamps();
         });
