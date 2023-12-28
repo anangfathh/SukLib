@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center justify-content-between">
         <a href="{{ route('user-dashboard') }}" class="logo d-flex align-items-center">
             <!-- kalau udah selesai ini ganti href ke index.php-->
-            <img src="assets/Photo/suklib.png" alt="">
+            <img src="{{ asset('assets/Photo/suklib.png') }}" alt="">
             <span class="d-none d-lg-block">SukLib</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>

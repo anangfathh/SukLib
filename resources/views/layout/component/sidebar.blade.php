@@ -25,7 +25,7 @@
         </li><!-- End Register Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('user-sumbang') }}">
+            <a class="nav-link collapsed" href="{{ route('member.books.create') }}">
                 <i class="bi bi-box2-heart"></i>
                 <span>Sumbang Buku</span>
             </a>
