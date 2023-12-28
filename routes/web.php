@@ -86,7 +86,7 @@ Route::get('/member/books', [BookListController::class, 'index'])->name('member.
 Route::get('/member/books/create', [BookListController::class, 'create'])->name('member.books.create');
 
 // Rute untuk menyimpan buku yang baru ditambahkan (store)
-Route::post('/member/books', [BookController::class, 'store'])->name('member.books.store');
+Route::post('/member/books', [BookListController::class, 'store'])->name('member.books.store');
 
 // Rute untuk menampilkan detail buku (show)
 Route::get('/member/books/{id}', [BookListController::class, 'show'])->name('member.books.show');

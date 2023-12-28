@@ -33,7 +33,7 @@ class BookListController extends Controller
             'desc' => 'required',
             'Rating' => 'required|numeric|max:5.0',
             'type' => 'required|in:Hard Copy,Soft Copy,Audio Book',
-            'category' => 'required|exists:book_category,id',
+            'category_id' => 'required|exists:book_category,id',
         ]);
 
         $book = new Book;
@@ -43,20 +43,20 @@ class BookListController extends Controller
         $book->desc = $request->input('desc');
         $book->Rating = $request->input('Rating');
         $book->type = $request->input('type');
-        $book->category = $request->input('category');
+        $book->category_id = $request->input('category_id');
         if ($request->hasFile('book_image')) {
             $imagePath = $request->file('book_image')->store('book_images', 'public');
             $book->book_image = $imagePath;
         }
         $book->save();
 
-        return redirect()->route('member.books.index')->with('success', 'Book added successfully');
+        return redirect()->back()->with('success', 'Book added successfully');
     }
 
     public function show($id)
     {
         $book = Book::findOrFail($id);
-        $book_category = BookCategory::findOrFail($book->category);
+        $book_category = BookCategory::findOrFail($book->category_id);
         $book_category = $book_category->name; // Assuming you have a "Book" model
 
         return view('member.book.show', compact('book', 'book_category'));

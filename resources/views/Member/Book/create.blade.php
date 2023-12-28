@@ -87,17 +87,13 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group mt-3">
-                                    <label for="book_image">{{ __('Book Image') }}</label>
-                                    <input id="book_image" type="file"
-                                        class="form-control-file @error('book_image') is-invalid @enderror"
-                                        name="book_image" accept="image/*">
-
-                                    @error('book_image')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                <div class="form-group">
+                                    <label for="category_id">Category</label>
+                                    <select id="category_id" name="category_id" class="form-control" required>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="text-center mt-3">
