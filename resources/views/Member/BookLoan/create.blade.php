@@ -1,6 +1,6 @@
 
 
-@extends('layouts.master')
+@extends('layouts.member')
 
 @section('content')
 <div class="container">

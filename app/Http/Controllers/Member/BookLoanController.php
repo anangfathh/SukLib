@@ -77,7 +77,7 @@ class BookLoanController extends Controller
         $book->status = 'Dipinjam';
         $book->save();
 
-        return redirect()->back()->with('success', 'Peminjaman buku berhasil.');
+        return redirect()->route('bookLoans.index')->with('success', 'Peminjaman buku berhasil.');
     }
 
     public function returnBook(Request $request, $bookLoan_id)
@@ -135,6 +135,10 @@ class BookLoanController extends Controller
         $bookLoan->metode_pembayaran = $request->metode_pembayaran;
 
         $bookLoan->save();
+
+        $book = Book::findOrFail($bookLoan->book_id);
+        $book->status = 'Tersedia';
+        $book->save();
 
         return redirect()->back()->with('success', 'Pembayaran denda berhasil');
     }

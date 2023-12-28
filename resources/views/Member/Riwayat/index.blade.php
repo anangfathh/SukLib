@@ -1,5 +1,5 @@
 {{-- resources/views/member/riwayat/index.blade.php --}}
-@extends('layouts.master') {{-- Adjust based on your layout file --}}
+@extends('layouts.member') {{-- Adjust based on your layout file --}}
 
 @section('content')
 
@@ -39,7 +39,7 @@
                     </td>
                     <td>
                         @if ($loan->date_returned === null && now() < $loan->due_date)
-                            <a href="" class="btn btn-success">Pengembalian</a>
+                            {{-- <a href="" class="btn btn-success">Pengembalian</a> --}}
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $loan->id }}">
                                 Pengembalian

@@ -1,5 +1,5 @@
 {{-- resources/views/member/riwayat/index.blade.php --}}
-@extends('layouts.master') {{-- Adjust based on your layout file --}}
+@extends('layouts.member') {{-- Adjust based on your layout file --}}
 
 @section('content')
 
