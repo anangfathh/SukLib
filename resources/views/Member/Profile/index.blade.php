@@ -121,7 +121,7 @@
                     <div class="card" style="background: linear-gradient(to bottom right, #FA7C54, #1B66F8);">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                            <img src="{{ asset('storage/' . $profiles->user_image) }}" alt="Profile" class="rounded-circle">
                             <h2 style="padding-top: 2px; color: whitesmoke;  font-weight: bold;">{{ $profiles->name }}
                             </h2>
 

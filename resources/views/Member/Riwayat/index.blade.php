@@ -32,6 +32,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
+                                        <th>Book Images</th>
                                         <th>User ID</th>
                                         <th>Book ID</th>
                                         <th>Date Borrowed</th>
@@ -45,7 +46,7 @@
                                     @foreach ($bookLoans as $loan)
                                         <tr>
                                             <th scope="row">
-                                                <a><img src="assets/Photo/book1.png" alt=""></a>
+                                                <a><img src="{{ asset('storage/' . $loan->book->book_image) }}" alt=""></a>
                                             </th>
                                             <td>{{ $loan->user_id }}</td>
                                             <td>{{ $loan->book_id }}</td>
