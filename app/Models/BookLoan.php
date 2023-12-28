@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class BookLoan extends Model
 {
     use HasFactory;
-    public $table = 'book_loans';
-    private $guarded = ['id'];
+    public $table = 'books_loans';
+    protected $guarded = ['id'];
 
     public function book()
     {
