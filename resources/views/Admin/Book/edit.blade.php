@@ -41,8 +41,8 @@
         </div>
 
         <div class="form-group">
-            <label for="category">{{ __('Book Category') }}</label>
-            <select id="category" class="form-control @error('category') is-invalid @enderror" name="category">
+            <label for="category_id">{{ __('Book Category') }}</label>
+            <select id="category_id" class="form-control @error('category') is-invalid @enderror" name="category_id">
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}" {{ old('category', $book->category) == $category->id ? 'selected' : '' }}>
                         {{ $category->name }}

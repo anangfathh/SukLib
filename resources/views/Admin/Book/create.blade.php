@@ -26,8 +26,8 @@
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
         </div>
         <div class="form-group">
-            <label for="category">Category:</label>
-            <select class="form-control" id="category" name="category" required>
+            <label for="category_id">Category:</label>
+            <select class="form-control" id="category_id" name="category_id" required>
                 <option value="" disabled selected>Select Category</option>
                 @foreach($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
