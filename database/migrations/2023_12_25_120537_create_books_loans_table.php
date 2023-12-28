@@ -16,9 +16,11 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreignId('book_id')->references('id')->on('books')->cascadeOnDelete();
             $table->date('date_borrowed');
-            $table->date('date_returned');
+            $table->date('date_returned')->nullable();
             $table->date('due_date');
             $table->integer('denda');
+            $table->enum('status_denda', ['Paid', 'Unpaid'])->nullable();
+            $table->enum('metode_pembayaran', ['BRI', 'BNI', 'Mandiri', 'DANA', 'Tunai'])->nullable();
             $table->timestamps();
         });
     }
