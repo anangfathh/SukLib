@@ -136,6 +136,10 @@ class BookLoanController extends Controller
 
         $bookLoan->save();
 
+        $book = Book::findOrFail($bookLoan->book_id);
+        $book->status = 'Tersedia';
+        $book->save();
+
         return redirect()->back()->with('success', 'Pembayaran denda berhasil');
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookCategoryController;
 use App\Http\Controllers\Member\BookListController;
 use App\Http\Controllers\Member\BookLoanController;
+use App\Http\Controllers\Member\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +65,8 @@ Route::get('/fines', [BookLoanController::class, 'fineList'])->name('fines.list'
 
 // Route for paying a fine
 Route::post('/pay-fine/{bookLoan_id}', [BookLoanController::class, 'payFine'])->name('fine.pay');
+
+
+// Route for the profile index page
+Route::get('/member/profile', [ProfileController::class, 'index'])->name('member.profile.index');
+Route::put('/member/profile/update/{user_id}', [ProfileController::class, 'update'])->name('profile.update');

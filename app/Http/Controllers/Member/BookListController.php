@@ -18,7 +18,11 @@ class BookListController extends Controller
     public function create()
     {
         $categories = BookCategory::all();
-        return view('member.book.create', compact('categories'));
+        $recents = Book::where('user_id', auth()->user()->id)
+            ->latest()
+            ->take(3)
+            ->get();
+        return view('member.book.create', compact('categories', 'recents'));
     }
 
     public function store(Request $request)
@@ -46,7 +50,7 @@ class BookListController extends Controller
         }
         $book->save();
 
-        return redirect()->route('books.index')->with('success', 'Book added successfully');
+        return redirect()->route('member.books.index')->with('success', 'Book added successfully');
     }
 
     public function show($id)
