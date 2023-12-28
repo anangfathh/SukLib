@@ -28,7 +28,7 @@ class BookController extends Controller
             'desc' => 'required',
             'Rating' => 'required|numeric|max:5.0',
             'type' => 'required|in:Hard Copy,Soft Copy,Audio Book',
-            'category' => 'required|exists:book_category,id',
+            'category_id' => 'required|exists:book_category,id',
         ]);
 
         $book = new Book;
@@ -38,7 +38,7 @@ class BookController extends Controller
         $book->desc = $request->input('desc');
         $book->Rating = $request->input('Rating');
         $book->type = $request->input('type');
-        $book->category = $request->input('category');
+        $book->category_id = $request->input('category_id');
         if ($request->hasFile('book_image')) {
             $imagePath = $request->file('book_image')->store('book_images', 'public');
             $book->book_image = $imagePath;
@@ -66,7 +66,7 @@ class BookController extends Controller
             'Rating' => 'required|numeric|max:5.0',
             'status' => 'required|in:Tersedia,Dipinjam,Kosong',
             'type' => 'required|in:Hard Copy,Soft Copy,Audio Book',
-            'category' => 'required|exists:book_category,id',
+            'category_id' => 'required|exists:book_category,id',
         ]);
 
         $book->book_id = $request->input('book_id');
@@ -75,7 +75,11 @@ class BookController extends Controller
         $book->Rating = $request->input('Rating');
         $book->status = $request->input('status');
         $book->type = $request->input('type');
-        $book->category = $request->input('category');
+        $book->category_id = $request->input('category_id');
+        if ($request->hasFile('book_image')) {
+            $imagePath = $request->file('book_image')->store('book_images', 'public');
+            $book->book_image = $imagePath;
+        }
         $book->save();
 
         return redirect()->route('books.index')->with('success', 'Book updated successfully');
@@ -84,7 +88,7 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::findOrFail($id);
-        $book_category = BookCategory::findOrFail($book->category);
+        $book_category = BookCategory::findOrFail($book->category_id);
         $book_category = $book_category->name; // Assuming you have a "Book" model
 
         return view('admin.book.show', compact('book', 'book_category'));

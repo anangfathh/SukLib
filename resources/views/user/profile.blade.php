@@ -1,6 +1,5 @@
 @extends('layout.after-login')
 @section('content')
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -185,20 +184,12 @@
                                             <button type="submit" class="btn btn-primary">Save Changes</button>
                                         </div>
                                     </form><!-- End Profile Edit Form -->
-
                                 </div>
-
-
-
-
                             </div><!-- End Bordered Tabs -->
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
     </main><!-- End #main -->
-    @endse
+@endsection

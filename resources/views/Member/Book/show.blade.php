@@ -1,4 +1,4 @@
-@extends('admin-layout.master')
+@extends('layout.after-login')
 @section('content')
     <main id="main" class="main">
 
@@ -26,8 +26,8 @@
                             No Image
                         @endif
                         <div class="card-body">
-                            <h5 class="card-title">Judul Buku : {{ $book->name }}</h5>
-                            <p style="font-size: 12px;">Rating Buku : {{ $book->Rating }}</p>
+                            <h5 class="card-title">{{ $book->name }}</h5>
+                            <p style="font-size: 12px;">{{ $book->Rating }}</p>
                         </div>
                     </div><!-- End Card kedua -->
                 </div>
@@ -51,8 +51,12 @@
                             <button class="btn btn-success btn-sm" style="font-size: 12px;">{{ $book->status }}</button>
                         </div>
                     </div>
-                    <div class="row m-5">
-                        <a href="{{ route('books.index') }}" class="btn btn-primary">Back to List</a>
+                    <div class="row m-3 ">
+                        <div class="container-m align-self-start"><a href="{{ route('bookLoans.form', $book->id) }}"
+                                class="btn btn-success">Pinjam</a></div>
+                        <div class="container-m align-self-start"> <a href="{{ route('member.books.index') }}"
+                                class="btn btn-primary mt-3">Back to List</a></div>
+
                         {{-- background-color: #FA7C54; --}}
                     </div>
 
