@@ -1,4 +1,4 @@
-@extends('layout.after-login')
+@extends('admin-layout.master')
 @section('content')
     <!-- MAIN HOME -->
     <main id="main" class="main">
