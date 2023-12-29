@@ -78,6 +78,38 @@
                                         </div>
 
                                         <div class="col-12">
+                                            <label for="gender"
+                                                class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
+                                            <select id="gender" type="text" class="form-control"
+                                                name="gender" required>
+                                                <option value="" disabled selected>Select Gender</option>
+                                                <option value="L">Laki-Laki</option>
+                                                <option value="P">Perempuan</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="address"
+                                                class="col-md-4 col-form-label text-md-end">{{ __('Alamat') }}</label>
+                                            <input id="address" type="text" class="form-control"
+                                                name="address" required>
+                                        </div>
+                                        
+                                        <div class="col-12">
+                                            <label for="no_telp"
+                                                class="col-md-4 col-form-label text-md-end">{{ __('No Handphone') }}</label>
+                                            <input id="no_telp" type="text" class="form-control"
+                                                name="no_telp" required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="tanggal_lahir"
+                                                class="col-md-4 col-form-label text-md-end">{{ __('Tanggal Lahir') }}</label>
+                                            <input id="tanggal_lahir" type="date" class="form-control"
+                                                name="tanggal_lahir" required>
+                                        </div>
+
+                                        <div class="col-12">
                                             <button class="btn btn-primary w-100" type="submit"
                                                 style="background-color: #FA7C54; border: none; ">Daftar</button>
                                         </div>
