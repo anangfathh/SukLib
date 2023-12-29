@@ -92,13 +92,13 @@
                                             <option value="Hard Copy"
                                                 {{ old('type', $book->type) === 'Hard Copy' ? 'selected' : '' }}>Hard Copy
                                             </option>
-                                            <option value="Soft Copy"
+                                            {{-- <option value="Soft Copy"
                                                 {{ old('type', $book->type) === 'Soft Copy' ? 'selected' : '' }}>Soft Copy
                                             </option>
                                             <option value="Audio Book"
                                                 {{ old('type', $book->type) === 'Audio Book' ? 'selected' : '' }}>Audio
                                                 Book
-                                            </option>
+                                            </option> --}}
                                         </select>
                                         @error('type')
                                             <span class="invalid-feedback" role="alert">
