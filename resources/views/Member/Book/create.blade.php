@@ -65,8 +65,8 @@
                                             required>
                                             <option value="" disabled selected>Select Category</option>
                                             <option value="Hard Copy">Hard Copy</option>
-                                            <option value="Soft Copy">Soft Copy</option>
-                                            <option value="Audio Book">Audio Book</option>
+                                            {{-- <option value="Soft Copy">Soft Copy</option>
+                                            <option value="Audio Book">Audio Book</option> --}}
                                         </select>
                                         <label for="type">Type</label>
                                     </div>
