@@ -71,6 +71,9 @@ Auth::routes();
 
 Route::middleware(['auth', 'is_admin'])->group(
     function () {
+        Route::get('/admin-dashboard', function () {
+            return view('admin.dashboard');
+        })->name('admin-dashboard');
         Route::resource('/books/categories', BookCategoryController::class);
         Route::resource('/books', BookController::class);
         Route::resource('/users', UserController::class);
