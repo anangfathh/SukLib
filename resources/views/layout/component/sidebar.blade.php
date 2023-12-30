@@ -32,11 +32,12 @@
         </li><!-- End Register Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" href="{{ route('users.literasi') }}">
                 <i class="bi bi-graph-up-arrow"></i>
                 <span>Literasi</span>
             </a>
         </li><!-- End Register Page Nav -->
+
 
         <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="users-profile.php">

@@ -5,7 +5,7 @@
 
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Form Layouts</h1>
+            <h1>Sumbang Buku</h1>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -18,8 +18,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Forms</li>
-                    <li class="breadcrumb-item active">Layouts</li>
+                    <li class="breadcrumb-item">Sumbang</li>
                 </ol>
             </nav>
         </div>
@@ -145,7 +144,7 @@
                                                 @endif
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $recent->name }}</h5>
-                                                    <p style="font-size: 12px;">{{ $recent->category_id }}</p>
+                                                    <p style="font-size: 12px;">{{ $recent->created_at }}</p>
                                                 </div>
                                             </div><!-- End Card kedua -->
                                         </div>
