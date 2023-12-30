@@ -42,12 +42,12 @@
             </a>
         </li>
 
-        {{-- <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-register.html">
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('users.literasi') }}">
                 <i class="bi bi-card-list"></i>
                 <span>Literasi</span>
             </a>
-        </li> --}}
+        </li>
         <!-- End Register Page Nav -->
         <!-- End Blank Page Nav -->
     </ul>

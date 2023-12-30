@@ -63,7 +63,7 @@ Route::get('/books-detail', function () {
     return view('user.books-detail');
 })->name('books-detail');
 
-Route::get('/literasi', [LiterasiController::class, 'index'])->name('users.index');
+Route::get('/literasi', [LiterasiController::class, 'index'])->name('users.literasi');
 
 Auth::routes();
 
@@ -79,7 +79,7 @@ Route::middleware(['auth', 'is_admin'])->group(
         })->name('admin-dashboard');
         Route::resource('/books/categories', BookCategoryController::class);
         Route::resource('/books', BookController::class);
-        Route::get('/literasi', [LiterasiController::class, 'index'])->name('users.literasi');
+
         Route::resource('/users', UserController::class);
         Route::get('/admin/book-loans', [AdminBookLoanController::class, 'index'])->name('admin.bookloans.index');
     }
@@ -87,7 +87,6 @@ Route::middleware(['auth', 'is_admin'])->group(
 
 Route::middleware(['auth', 'is_member'])->group(
     function () {
-        Route::get('/literasi', [LiterasiController::class, 'index'])->name('users.literasi');
         Route::get('/member/books', [BookListController::class, 'index'])->name('member.books.index')->middleware('is_member');
         Route::get('/member/books/create', [BookListController::class, 'create'])->name('member.books.create');
         Route::post('/member/books', [BookListController::class, 'store'])->name('member.books.store');
