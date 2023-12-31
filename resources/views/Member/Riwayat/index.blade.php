@@ -46,22 +46,20 @@
                                     @foreach ($bookLoans as $loan)
                                         <tr>
                                             <th scope="row">
-                                                <a><img src="{{ asset('storage/' . $loan->book->book_image) }}"
-                                                        alt=""></a>
+                                                <a><img src="{{ asset('storage/' . $loan->book->book_image) }}" alt=""></a>
                                             </th>
-                                            <td>{{ $loan->Book->name }}</td>
-                                            <td>{{ $loan->Book->book_id }}</td>
+                                            <td>{{ $loan->user_id }}</td>
+                                            <td>{{ $loan->book_id }}</td>
                                             <td>{{ $loan->date_borrowed }}</td>
                                             <td>{{ $loan->due_date }}</td>
                                             <td>{{ $loan->denda }}</td>
                                             <td>
                                                 @if ($loan->date_returned === null && now() < $loan->due_date)
-                                                    <span class="badge border-primary border-1 text-primary">Dipinjam</span>
+                                                    Currently Borrowed
                                                 @elseif ($loan->date_returned !== null)
-                                                    <span
-                                                        class="badge border-success border-1 text-success">Dikembalikan</span>
+                                                    Returned
                                                 @elseif (now() > $loan->due_date && $loan->date_returned === null)
-                                                    <span class="badge border-danger border-1 text-danger">Terlambat</span>
+                                                    Overdue
                                                 @endif
                                             </td>
                                             <td>
@@ -132,7 +130,7 @@
                                                     </div>
                                                 @elseif ($loan->date_returned !== null)
                                                     <a href="" class="btn btn-secondary"
-                                                        @disabled(true)>Dikembalikan</a>
+                                                        @disabled(true)>Pengembalian</a>
                                                 @elseif (now() > $loan->due_date && $loan->date_returned === null)
                                                     <a href="{{ route('fines.list') }}" class="btn btn-danger">Bayar
                                                         Denda</a>

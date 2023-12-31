@@ -5,12 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\LiterasiController;
 use App\Http\Controllers\BookCategoryController;
-use App\Http\Controllers\AdminBookLoanController;
-use App\Http\Controllers\Member\ProfileController;
 use App\Http\Controllers\Member\BookListController;
 use App\Http\Controllers\Member\BookLoanController;
+use App\Http\Controllers\Member\ProfileController;
+use App\Http\Controllers\AdminBookLoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,8 +62,6 @@ Route::get('/books-detail', function () {
     return view('user.books-detail');
 })->name('books-detail');
 
-Route::get('/literasi', [LiterasiController::class, 'index'])->name('users.literasi');
-
 Auth::routes();
 
 
@@ -79,7 +76,6 @@ Route::middleware(['auth', 'is_admin'])->group(
         })->name('admin-dashboard');
         Route::resource('/books/categories', BookCategoryController::class);
         Route::resource('/books', BookController::class);
-
         Route::resource('/users', UserController::class);
         Route::get('/admin/book-loans', [AdminBookLoanController::class, 'index'])->name('admin.bookloans.index');
     }
