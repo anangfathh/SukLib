@@ -69,11 +69,7 @@
                                             <p class="small mb-0">Belum Punya Akun? <a
                                                     href="{{ route('register') }}">Daftar</a></p>
                                         </div>
-                                        @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
-                                        @endif
+
                                     </form>
 
                                 </div>

@@ -44,9 +44,9 @@
                                         <thead>
                                             <tr>
                                                 <th>Book Images</th>
-                                                <th>ID</th>
+                                                <th>Judul Buku</th>
                                                 <th>Book ID</th>
-                                                <th>Name</th>
+
                                                 <th>Rating</th>
                                                 <th>Status</th>
                                                 <th>Type</th>
@@ -57,17 +57,17 @@
                                             @foreach ($books as $book)
                                                 <tr>
                                                     <td scope="row"><a href="#">
-                                                        @if ($book->book_image)
-                                                        <img src="{{ asset('storage/' . $book->book_image) }}"
-                                                        alt="Book Image" width="70" height="100"
-                                                        class="align-self-center">
-                                                        @else
-                                                        No Image
-                                                        @endif
-                                                    </a></td>
-                                                    <td>{{ $book->id }}</td>
-                                                    <td>{{ $book->book_id }}</td>
+                                                            @if ($book->book_image)
+                                                                <img src="{{ asset('storage/' . $book->book_image) }}"
+                                                                    alt="Book Image" width="70" height="100"
+                                                                    class="align-self-center">
+                                                            @else
+                                                                No Image
+                                                            @endif
+                                                        </a></td>
                                                     <td>{{ $book->name }}</td>
+                                                    <td>{{ $book->book_id }}</td>
+
                                                     <td>{{ $book->Rating }}</td>
                                                     <td>{{ $book->status }}</td>
                                                     <td>{{ $book->type }}</td>
