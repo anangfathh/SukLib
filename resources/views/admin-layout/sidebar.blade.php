@@ -43,7 +43,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('users.literasi') }}">
+            <a class="nav-link collapsed" href="{{ route('admin.literasi') }}">
                 <i class="bi bi-card-list"></i>
                 <span>Literasi</span>
             </a>

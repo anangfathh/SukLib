@@ -63,8 +63,8 @@ Route::get('/books-detail', function () {
     return view('user.books-detail');
 })->name('books-detail');
 
-Route::get('/literasi', [LiterasiController::class, 'index'])->name('users.literasi');
-
+Route::get('/user/literasi', [LiterasiController::class, 'index'])->name('user.literasi');
+Route::get('/admin/literasi', [LiterasiController::class, 'adminindex'])->name('admin.literasi');
 Auth::routes();
 
 
