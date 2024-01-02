@@ -2,7 +2,6 @@
 @section('content')
     <!-- MAIN HOME -->
     <main id="main" class="main">
-
         <div class="pagetitle">
             <h1>Home</h1>
             <nav>
@@ -34,13 +33,16 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="assets/img/quote-1.png" class="d-block w-100" alt="...">
+                                        <img src="{{ asset('assets/img/quote-1.png') }}" class="d-block w-100"
+                                            alt="...">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/img/quote-2.png" class="d-block w-100" alt="...">
+                                        <img src="{{ asset('assets/img/quote-2.png') }}" class="d-block w-100"
+                                            alt="...">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/img/quote-3.png" class="d-block w-100" alt="...">
+                                        <img src="{{ asset('assets/img/quote-3.png') }}" class="d-block w-100"
+                                            alt="...">
                                     </div>
                                 </div>
 
@@ -69,19 +71,14 @@
 
                     <div class="card info-card customers-card">
                         <div class="card-body">
-                            <img src="assets/img/new arriv.png" alt="Customer Image"
+                            <img src="{{ asset('assets/img/new arriv.png') }}" alt="Customer Image"
                                 style="width: 0.8cm ; margin-top: 10px; border-radius: 10px;">
-                            <img src="assets/Photo/new3.png" alt="Customer Image"
-                                style="width: 2.6cm ; margin-top: 14px; margin-left: 30px; border-radius: 10px;">
-                            <img src="assets/Photo/new2.png" alt="Customer Image"
-                                style="width: 2.5cm ; margin-top: 14px; margin-left: 35px; border-radius: 10px;">
-                            <img src="assets/Photo/book3.png" alt="Customer Image"
-                                style="width: 2.5cm ; margin-top: 14px; margin-left: 35px; border-radius: 10px;">
-
-                            <a href=details-book.php>
-                                <img src="assets/Photo/new4.png" alt="Customer Image"
-                                    style="width: 2.5cm ; margin-top: 14px; margin-left: 35px; border-radius: 10px;">
-                            </a>
+                            @foreach ($recent as $new)
+                                <a href="{{ route('member.books.show', $new->id) }}">
+                                    <img src="{{ asset('storage/' . $new->book_image) }}" alt="Customer Image"
+                                        style="width: 2.6cm ; margin-top: 14px; margin-left: 30px; border-radius: 10px;">
+                                </a>
+                            @endforeach
 
                         </div>
 
@@ -95,72 +92,30 @@
             <div class="row">
                 <h4 class="card-title" style="font-size: 26px; margin-left: 16px;">Selamat Pagi</h4>
                 <h4 class="card-title" style="font-size: 20px; margin-left: 16px;">Rekomendasi Untuk Anda</h4>
-                <div class="col-lg-2">
-                    <!-- Card pertama -->
-                    <div class="card">
-                        <img src="assets/Photo/book1.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Don't Make Me think</h5>
-                            <p style="font-size: 12px;">Steve Krug, 2000 <br> 4.5/5
-                            </p>
-                        </div>
-                    </div><!-- End Card pertama -->
-                </div>
+                @foreach ($random as $random)
+                    <div class="col-lg-2">
+                        <!-- Card pertama -->
+                        <a href="{{ route('member.books.show', $random->id) }}">
+                            <div class="card">
+                                @if ($random->book_image)
+                                    <img src="{{ asset('storage/' . $random->book_image) }}" alt="Book Image" width="250"
+                                        height="350" class="align-self-center">
+                                @else
+                                    No Image
+                                @endif
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $random->name }}</h5>
+                                    <p style="font-size: 12px;">Steve Krug, 2000 <br> 4.5/5
+                                    </p>
+                                </div>
+                            </div><!-- End Card pertama -->
+                        </a>
+                    </div>
+                @endforeach
 
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/book2.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">The Design of Every</h5>
-                            <p style="font-size: 12px;">Don Norman, 1988 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
 
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/book3.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sprint : How To Solve</h5>
-                            <p style="font-size: 12px;">Jake Knapp, 2000 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
 
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/book4.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">LEAN UX</h5>
-                            <p style="font-size: 12px;">Jeff G. and Josh S., 2016 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
 
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/book5.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">The Road to React</h5>
-                            <p style="font-size: 12px;">Robin Wieruch., 2000 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
-
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/new1.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Filosofi Teras</h5>
-                            <p style="font-size: 12px;">Henry M., 2018 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
 
             </div>
 
@@ -169,71 +124,28 @@
 
             <div class="row">
                 <h4 class="card-title" style="font-size: 20px; margin-left: 16px;">Bacaan Terkini</h4>
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/new2.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Pulang Pergi</h5>
-                            <p style="font-size: 12px;">Tere Liye, 2021 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
+                @foreach ($rekomendasi as $rekom)
+                    <div class="col-lg-2">
+                        <!-- Card pertama -->
+                        <a href="{{ route('member.books.show', $rekom->id) }}">
+                            <div class="card">
+                                @if ($rekom->book_image)
+                                    <img src="{{ asset('storage/' . $rekom->book_image) }}" alt="Book Image" width="250"
+                                        height="350" class="align-self-center">
+                                @else
+                                    No Image
+                                @endif
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $rekom->name }}</h5>
+                                    <p style="font-size: 12px;">Steve Krug, 2000 <br> 4.5/5
+                                    </p>
+                                </div>
+                            </div><!-- End Card pertama -->
+                        </a>
+                    </div>
+                @endforeach
 
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/new3.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Sepotong Hati Yang..</h5>
-                            <p style="font-size: 12px;">Tere Liye, 2021 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
 
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/new4.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Mariposa</h5>
-                            <p style="font-size: 12px;">Luluk HF., 2018 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
-
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/new5.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Dikta dan Hukum</h5>
-                            <p style="font-size: 12px;">Dhia'an F., 2018 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
-
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/new6.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Dilan 1990</h5>
-                            <p style="font-size: 12px;">Pidi Baiq, 2014 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
-
-                <div class="col-lg-2">
-                    <!-- Card kedua -->
-                    <div class="card">
-                        <img src="assets/Photo/new7.png" class="card-img-top" alt="..." style="height: 206px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Si Anak Pintar</h5>
-                            <p style="font-size: 12px;">Tere Liye, 2018 <br> 4.5/5</p>
-                        </div>
-                    </div><!-- End Card kedua -->
-                </div>
 
             </div>
 
@@ -245,9 +157,7 @@
             </div><!-- End News & Updates -->
 
             </div>
-
             <!-- End Right side columns -->
-
             </div>
         </section>
 

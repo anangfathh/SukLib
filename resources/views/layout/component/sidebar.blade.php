@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item" style="padding-top: 10px">
-            <a class="nav-link " href="{{ route('user-dashboard') }}">
+            <a class="nav-link " href="{{ route('home') }}">
                 <i class="bi bi-house-door"></i>
                 <span>Home</span>
             </a>

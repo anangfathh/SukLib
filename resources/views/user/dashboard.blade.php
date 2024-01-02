@@ -33,13 +33,16 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="assets/img/quote-1.png" class="d-block w-100" alt="...">
+                                        <img src="{{ asset('assets/img/quote-1.png') }}" class="d-block w-100"
+                                            alt="...">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/img/quote-2.png" class="d-block w-100" alt="...">
+                                        <img src="{{ asset('assets/img/quote-2.png') }}" class="d-block w-100"
+                                            alt="...">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/img/quote-3.png" class="d-block w-100" alt="...">
+                                        <img src="{{ asset('assets/img/quote-3.png') }}" class="d-block w-100"
+                                            alt="...">
                                     </div>
                                 </div>
 
@@ -68,9 +71,9 @@
 
                     <div class="card info-card customers-card">
                         <div class="card-body">
-                            <img src="assets/img/new arriv.png" alt="Customer Image"
+                            <img src="{{ asset('assets/img/new arriv.png') }}" alt="Customer Image"
                                 style="width: 0.8cm ; margin-top: 10px; border-radius: 10px;">
-                            @foreach ($new as $new)
+                            @foreach ($recent as $new)
                                 <a href="{{ route('member.books.show', $new->id) }}">
                                     <img src="{{ asset('storage/' . $new->book_image) }}" alt="Customer Image"
                                         style="width: 2.6cm ; margin-top: 14px; margin-left: 30px; border-radius: 10px;">
@@ -159,3 +162,4 @@
         </section>
 
     </main><!-- End #main -->
+@endsection
