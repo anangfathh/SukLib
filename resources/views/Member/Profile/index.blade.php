@@ -121,7 +121,8 @@
                     <div class="card" style="background: linear-gradient(to bottom right, #FA7C54, #1B66F8);">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                            <img src="{{ asset('storage/' . $profiles->user_image) }}" alt="Profile" class="rounded-circle">
+                            <img src="{{ asset('storage/' . $profiles->user_image) }}" alt="Profile"
+                                class="rounded-circle">
                             <h2 style="padding-top: 2px; color: whitesmoke;  font-weight: bold;">{{ $profiles->name }}
                             </h2>
 
@@ -130,25 +131,25 @@
 
                 </div>
 
-                {{-- <div class="col-xl-3">
+                <div class="col-xl-3">
                     <div class="card" style="background: linear-gradient(to bottom right, #FA7C54, #1B66F8);">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                             <i class="bi bi-book" style="font-size: 62px; color: whitesmoke"></i>
                             <h3 style="color: whitesmoke;  font-weight: bold;">Buku Terpinjam</h3>
-                            <h4 style="color: whitesmoke;  font-weight: bold;">10</h4>
+                            <h4 style="color: whitesmoke;  font-weight: bold;">{{ $recents }}</h4>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
-                {{-- <div class="col-xl-3">
+                <div class="col-xl-3">
                     <div class="card" style="background: linear-gradient(to bottom right, #FA7C54, #1B66F8);">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                             <i class="bi bi-cash" style="font-size: 62px; color: whitesmoke;"></i>
                             <h3 style="color: whitesmoke;  font-weight: bold;">Poin</h3>
-                            <h4 style="color: whitesmoke;  font-weight: bold;">95</h4>
+                            <h4 style="color: whitesmoke;  font-weight: bold;">{{ $recents * 5 }}</h4>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
 
 

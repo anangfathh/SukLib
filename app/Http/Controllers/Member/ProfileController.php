@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Member;
 
-use App\Http\Controllers\Controller;
+
 use App\Models\User;
+use App\Models\BookLoan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -12,7 +14,8 @@ class ProfileController extends Controller
     public function index()
     {
         $profiles = Auth::user();
-        return view('member.profile.index', compact('profiles'));
+        $recents = BookLoan::where('user_id', auth()->user()->id)->count();
+        return view('member.profile.index', compact('profiles', 'recents'));
     }
 
     public function update(Request $request, $user_id)

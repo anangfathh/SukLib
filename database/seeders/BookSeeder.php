@@ -23,6 +23,8 @@ class BookSeeder extends Seeder
             'type' => 'Hard Copy',
             'category_id' => '1',
             'book_image' => 'book_images\atomic.jpeg',
+            'penulis' => 'James Clear',
+            'penerbit' => 'Penguin Books',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -37,6 +39,8 @@ class BookSeeder extends Seeder
             'type' => 'Hard Copy',
             'category_id' => '2',
             'book_image' => 'book_images\TheArtofWar-by-SunTzu.jpg',
+            'penulis' => 'Sun Tzu',
+            'penerbit' => 'Shira Media',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -51,6 +55,8 @@ class BookSeeder extends Seeder
             'type' => 'Hard Copy',
             'category_id' => '2',
             'book_image' => 'book_images\warofart.jpeg',
+            'penulis' => 'Steven Pressfield',
+            'penerbit' => 'Warner Books',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -65,6 +71,8 @@ class BookSeeder extends Seeder
             'type' => 'Hard Copy',
             'category_id' => '3',
             'book_image' => 'book_images\someday.jpeg',
+            'penulis' => 'Matthew Dicks',
+            'penerbit' => ' New World Library',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
