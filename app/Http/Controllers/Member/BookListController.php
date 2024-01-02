@@ -34,6 +34,8 @@ class BookListController extends Controller
             'Rating' => 'required|numeric|max:5.0',
             'type' => 'required|in:Hard Copy,Soft Copy,Audio Book',
             'category_id' => 'required|exists:book_category,id',
+            'penulis' => 'required',
+            'penerbit' => 'required',
         ]);
 
         $book = new Book;
@@ -43,6 +45,8 @@ class BookListController extends Controller
         $book->desc = $request->input('desc');
         $book->Rating = $request->input('Rating');
         $book->type = $request->input('type');
+        $book->penulis = $request->input('penulis');
+        $book->penerbit = $request->input('penerbit');
         $book->category_id = $request->input('category_id');
         if ($request->hasFile('book_image')) {
             $imagePath = $request->file('book_image')->store('book_images', 'public');

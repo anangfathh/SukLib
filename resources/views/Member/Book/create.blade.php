@@ -55,14 +55,28 @@
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="name" name="name"
                                             value="{{ old('name') }}" required>
-                                        <label for="floatingpengarang">Book Name</label>
+                                        <label for="floatingpengarang">Nama Buku</label>
+                                    </div>
+                                </div>
+                                <div class="col-md mt-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="penulis" name="penulis"
+                                            value="{{ old('penulis') }}" required>
+                                        <label for="floatingpengarang">Penulis Buku</label>
+                                    </div>
+                                </div>
+                                <div class="col-md mt-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="penerbit" name="penerbit"
+                                            value="{{ old('penerbit') }}" required>
+                                        <label for="floatingpengarang">Penerbit</label>
                                     </div>
                                 </div>
                                 <div class="col-md mt-3">
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="type" name="type" aria-label="State"
                                             required>
-                                            <option value="" disabled selected>Select Category</option>
+                                            <option value="" disabled selected>Select Type</option>
                                             <option value="Hard Copy">Hard Copy</option>
                                             {{-- <option value="Soft Copy">Soft Copy</option>
                                             <option value="Audio Book">Audio Book</option> --}}

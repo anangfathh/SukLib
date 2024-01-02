@@ -20,24 +20,30 @@
                 <div class="col-lg-2" style="padding-right: 20px;">
                     <!-- Card kedua -->
                     <div class="card">
-                        @if ($book->book_image)
-                            <img src="{{ asset('storage/' . $book->book_image) }}" alt="Book Image" width="100">
-                        @else
-                            No Image
-                        @endif
+                        <div class="d-flex justify-content-center">
+                            @if ($book->book_image)
+                                <img src="{{ asset('storage/' . $book->book_image) }}" alt="Book Image" width="250">
+                            @else
+                                No Image
+                            @endif
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $book->name }}</h5>
-                            <p style="font-size: 12px;">{{ $book->Rating }}</p>
+                            <p style="font-size: 14px;"><i class="bi bi-star-fill" style="color: rgb(255, 226, 3);"></i>
+                                {{ $book->Rating }} <span>/5</span>
+                            </p>
                         </div>
                     </div><!-- End Card kedua -->
                 </div>
 
                 <div class="col-lg-4">
                     <h1>{{ $book->name }}</h1>
-                    <p>By Luluk HF, 2018 <br> Season Satu </p>
+                    <p>Author : {{ $book->penulis }}
+                        <br>Penerbit : {{ $book->penerbit }}
+                    </p>
                     <div class="row">
                         <div class="col-lg-6">
-                            <p style="font-size: 12px; font-weight: bold;">2 Sedang Dibaca</p>
+
                             <h6>Jenis Buku</h6>
                             <p style="font-size: 12px;">
                                 <i class="bi bi-check-circle"></i>
@@ -46,16 +52,15 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <p style="font-size: 12px; font-weight: bold;">20 Sudah Dibaca</p>
                             <h6>Status</h6>
-                            <button class="btn btn-success btn-sm" style="font-size: 12px;">{{ $book->status }}</button>
+                            <button class="btn btn-info btn-sm" style="font-size: 12px;">{{ $book->status }}</button>
                         </div>
                     </div>
-                    <div class="row m-3 ">
+                    <div class="row m-3">
                         <div class="container-m align-self-start"><a href="{{ route('bookLoans.form', $book->id) }}"
-                                class="btn btn-success">Pinjam</a></div>
+                                class="btn btn-success w-50">Pinjam</a></div>
                         <div class="container-m align-self-start"> <a href="{{ route('member.books.index') }}"
-                                class="btn btn-primary mt-3">Back to List</a></div>
+                                class="btn btn-primary mt-3 w-50">Back to List</a></div>
 
                         {{-- background-color: #FA7C54; --}}
                     </div>
@@ -68,7 +73,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="card-title">Details</h1>
+                            <h1 class="card-title">Deskripsi Buku</h1>
                             <p style="font-size: 14px;">{{ $book->desc }}</p>
                         </div>
                     </div>

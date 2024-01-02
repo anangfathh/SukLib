@@ -22,6 +22,8 @@ return new class extends Migration
             $table->enum('type', ['Hard Copy', 'Soft Copy', 'Audio Book']);
             $table->foreignId('category_id')->references('id')->on('book_category')->cascadeOnDelete();
             $table->string('book_image')->nullable();
+            $table->string('penulis')->nullable();
+            $table->string('penerbit')->nullable();
             $table->timestamps();
         });
     }

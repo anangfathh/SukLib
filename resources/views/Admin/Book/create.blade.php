@@ -68,6 +68,20 @@
                                         <label for="type">Type</label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="penulis" name="penulis"
+                                            value="{{ old('penulis') }}" required>
+                                        <label for="floatingpengarang">Penulis Buku</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="penerbit" name="penerbit"
+                                            value="{{ old('penerbit') }}" required>
+                                        <label for="floatingpengarang">Penerbit Buku</label>
+                                    </div>
+                                </div>
                                 <div class="col-6">
                                     <div class="form-floating">
                                         <input type="number" class="form-control" id="Rating" name="Rating"

@@ -137,6 +137,36 @@
                                         <label for="desc">{{ __('Description') }}</label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input id="penulis" type="text"
+                                            class="form-control @error('penulis') is-invalid @enderror" name="penulis"
+                                            value="{{ old('penulis', $book->penulis) }}" required>
+
+                                        @error('penulis')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+
+                                        <label for="penulis">{{ __('Penulis Buku') }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input id="penerbit" type="text"
+                                            class="form-control @error('penerbit') is-invalid @enderror" name="penerbit"
+                                            value="{{ old('penerbit', $book->penerbit) }}" required>
+
+                                        @error('penerbit')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+
+                                        <label for="penerbit">{{ __('Penerbit Buku') }}</label>
+                                    </div>
+                                </div>
 
                                 <div class="col-md">
                                     <div class="form-floating mb-3">

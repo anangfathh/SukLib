@@ -29,6 +29,8 @@ class BookController extends Controller
             'Rating' => 'required|numeric|max:5.0',
             'type' => 'required|in:Hard Copy,Soft Copy,Audio Book',
             'category_id' => 'required|exists:book_category,id',
+            'penulis' => 'required',
+            'penerbit' => 'required',
         ]);
 
         $book = new Book;
@@ -39,6 +41,8 @@ class BookController extends Controller
         $book->Rating = $request->input('Rating');
         $book->type = $request->input('type');
         $book->category_id = $request->input('category_id');
+        $book->penulis = $request->input('penulis');
+        $book->penerbit = $request->input('penerbit');
         if ($request->hasFile('book_image')) {
             $imagePath = $request->file('book_image')->store('book_images', 'public');
             $book->book_image = $imagePath;
@@ -67,6 +71,8 @@ class BookController extends Controller
             'status' => 'required|in:Tersedia,Dipinjam,Kosong',
             'type' => 'required|in:Hard Copy,Soft Copy,Audio Book',
             'category_id' => 'required|exists:book_category,id',
+            'penulis' => 'required',
+            'penerbit' => 'required',
         ]);
 
         $book->book_id = $request->input('book_id');
@@ -76,6 +82,8 @@ class BookController extends Controller
         $book->status = $request->input('status');
         $book->type = $request->input('type');
         $book->category_id = $request->input('category_id');
+        $book->penulis = $request->input('penulis');
+        $book->penerbit = $request->input('penerbit');
         if ($request->hasFile('book_image')) {
             $imagePath = $request->file('book_image')->store('book_images', 'public');
             $book->book_image = $imagePath;
